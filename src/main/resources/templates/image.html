@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        html, body, #wrapper {
+           height:100%;
+           width: 100%;
+           margin: 0;
+           padding: 0;
+           border: 0;
+        }
+        #wrapper td {
+           vertical-align: middle;
+           text-align: center;
+        }
+        body {
+            background-color: black;
+        }
+    </style>
+
+</head>
+<body>
+
+<table id="wrapper">
+    <tr>
+        <td><img th:src="${imgSrc}" /></td>
+    </tr>
+</table>
+
+</body>
+</html>
