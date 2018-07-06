@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>Upload image</h1>
+<h1>Upload image (25MB max)</h1>
 
 <form method="POST" action="/upload" enctype="multipart/form-data">
     <input type="file" name="file" /><br/><br/>
@@ -24,7 +24,7 @@
     <h1>Images</h1>
     <div class="table table-striped">
         <span th:each="name : ${fileNames}">
-            <a th:href="${'../image/' + name + '/download'}">
+            <a th:href="${'../image/' + name}">
                 <table>
                     <tr>
                         <td><img style="height: 100px;" th:src="${'../image/' + name + '/download'}" /></td>

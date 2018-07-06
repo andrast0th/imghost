@@ -2,30 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <style>
-        html, body, #wrapper {
-           height:100%;
-           width: 100%;
-           margin: 0;
-           padding: 0;
-           border: 0;
+        body, html {
+            background: black;
+            height: 100%;
+            margin: 0;
         }
-        #wrapper td {
-           vertical-align: middle;
-           text-align: center;
-        }
-        body {
-            background-color: black;
+        .bg {
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
         }
     </style>
-
 </head>
 <body>
-
-<table id="wrapper">
-    <tr>
-        <td><img th:src="${imgSrc}" /></td>
-    </tr>
-</table>
-
+<div class="bg" th:style="${' background-image: url(' + imgSrc + ');'}" ></div>
 </body>
 </html>
