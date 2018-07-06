@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ImgHostApplication {
 
-	private int maxUploadSizeInMb = 10 * 1024 * 1024; // 10 MB
+	private int maxUploadSizeInMb = 25 * 1024 * 1024; // 10 MB
 
 	public static void main(String[] args) {
 		SpringApplication.run(ImgHostApplication.class, args);
