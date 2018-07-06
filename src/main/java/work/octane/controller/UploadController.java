@@ -48,9 +48,9 @@ public class UploadController {
         List<File> files = ImageUtil.getAllImages();
         List<String> fileSrcs =
                 files.stream()
-                        .map(file -> "../image/" + file.getName() + "/download")
+                        .map(File::getName)
                         .collect(Collectors.toList());
-        model.addAttribute("fileSrcs", fileSrcs);
+        model.addAttribute("fileNames", fileSrcs);
         return "upload";
     }
 

@@ -47,6 +47,16 @@ public class ImageController {
         inputStream.close();
     }
 
+    @RequestMapping(value="/image/{name}/delete", method = RequestMethod.GET)
+    public String deleteImage(@PathVariable("name") String name) throws IOException {
+        File file = new File(UPLOADED_FOLDER + name);
+        if(!file.exists()){
+            throw new FileNotFoundException(name);
+        }
+        file.delete();
+        return "redirect:/upload";
+    }
+
     @GetMapping("/image/{name:.+}")
     public String getImageByName(@PathVariable String name, Model model) {
         model.addAttribute("imgSrc", "/image/" + name + "/download");

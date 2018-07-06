@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        table {
+            float: left
+        }
+    </style>
+</head>
 <body>
 
 <h1>Upload image</h1>
@@ -13,12 +20,19 @@
     <h2 th:text="${message}"/>
 </div>
 
-<div th:if="${not #lists.isEmpty(fileSrcs)}">
+<div th:if="${not #lists.isEmpty(fileNames)}">
     <h1>Images</h1>
     <div class="table table-striped">
-        <span th:each="fileSrc : ${fileSrcs}">
-            <a th:href="${fileSrc}">
-                <img style="height: 100px;" th:src="${fileSrc}" />
+        <span th:each="name : ${fileNames}">
+            <a th:href="${'../image/' + name + '/download'}">
+                <table>
+                    <tr>
+                        <td><img style="height: 100px;" th:src="${'../image/' + name + '/download'}" /></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><a th:href="${'../image/' + name + '/delete'}">delete</a></td>
+                    </tr>
+                </table>
             </a>
         </span>
     </div>
